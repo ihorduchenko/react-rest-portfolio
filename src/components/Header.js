@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 
 import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavbarToggler, MDBCollapse, MDBContainer } from "mdbreact";
@@ -47,6 +48,11 @@ class Header extends Component {
       </MDBNavbar>
     );
   }
+}
+
+Header.propTypes = {
+  menus: PropTypes.object,
+  options: PropTypes.object
 }
 
 export default Header;

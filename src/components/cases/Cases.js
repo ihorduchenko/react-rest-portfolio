@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 import { MDBContainer } from 'mdbreact';
 
@@ -89,8 +88,3 @@ class Cases extends Component {
 }
 
 export default Cases;
-
-Cases.propTypes = {
-  name: PropTypes.array,
-  skills: PropTypes.array
-};

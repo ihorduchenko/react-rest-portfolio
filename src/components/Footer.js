@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { MDBBtn } from "mdbreact";
 
 import { detectBtnStyle } from '../helpers';
@@ -27,5 +28,9 @@ class Footer extends Component {
     );
   }
 }
+
+Footer.propTypes = {
+  options: PropTypes.object
+};
 
 export default Footer;
