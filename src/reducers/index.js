@@ -115,6 +115,7 @@ const pagesReducer = (state = initialPagesState, action) => {
 };
 
 const initialCasesState = {
+  modalOpen: false,
   cases: [],
   filteredCases: [],
   casesLoading: true

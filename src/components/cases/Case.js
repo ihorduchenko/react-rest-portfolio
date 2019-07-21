@@ -21,6 +21,6 @@ const Case = cas => {
       </MDBCard>
     </>
   );
-}
+};
 
 export default Case;
