@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { MDBContainer, MDBBtn } from 'mdbreact';
+import { MDBContainer } from 'mdbreact';
 
 import CasesFilter from './CasesFilter';
 import CasesLoop from './CasesLoop';
@@ -15,17 +15,28 @@ class Cases extends Component {
       activeCases: [],
       skills: this.props.skills,
       activeSkills: [],
-      modalOpen: false
+      modalOpen: false,
+      modalCase: null
     };
 
     this.setActiveSkills = this.setActiveSkills.bind(this);
     this.toggleModal = this.toggleModal.bind(this);
   }
 
-  toggleModal = () => {
-    this.setState({
-      modalOpen: !this.state.modalOpen
-    });
+  toggleModal = (casse) => {
+    if(this.state.modalCase === null) {
+      this.setState({
+        modalCase: casse,
+        modalOpen: !this.state.modalOpen
+      });
+    } else {
+      this.setState({
+        modalCase: null,
+        modalOpen: !this.state.modalOpen
+      }, () => {
+        // console.log(this.state.modalCase);
+      });
+    }
   };
 
   setActiveSkills(e) {
@@ -47,7 +58,7 @@ class Cases extends Component {
     this.setState( {
         activeSkills: activeSkillsUpd
       }, () => {
-        console.log(this.state.activeSkills);
+        // console.log(this.state.activeSkills);
         let activeCases = this.filterCases(
           this.state.cases, this.state.activeSkills
         );
@@ -55,7 +66,7 @@ class Cases extends Component {
         this.setState( {
           activeCases: activeCases
         }, () => {
-            console.log(this.state.activeCases);
+            // console.log(this.state.activeCases);
           }
         );
       }
@@ -81,19 +92,26 @@ class Cases extends Component {
     const { cases, activeCases } = this.state;
     const casesToShow = ( activeCases.length !== 0 ) ? activeCases : cases;
 
-    console.log(casesToShow);
+    // console.log(casesToShow);
 
     return (
       <section className="py-5">
         <MDBContainer fluid>
-          <CaseModal modalOpen={this.state.modalOpen} toggleModal={this.toggleModal} />
-          <MDBBtn onClick={this.toggleModal}>Modal</MDBBtn>
           <CasesFilter
             skills={skills}
             activeSkills={activeSkills}
             onFiltering={this.setActiveSkills}
           />
-          <CasesLoop cases={casesToShow} />
+          <CasesLoop 
+            cases={casesToShow} 
+            modalOpen={this.state.modalOpen} 
+            toggleModal={this.toggleModal} 
+          />
+          <CaseModal 
+            actCase={this.state.modalCase} 
+            modalOpen={this.state.modalOpen} 
+            toggleModal={this.toggleModal} 
+          />
         </MDBContainer>
       </section>
     );

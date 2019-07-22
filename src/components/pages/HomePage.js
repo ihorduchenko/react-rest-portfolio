@@ -5,7 +5,6 @@ import { getPage, getCases, getSkills } from '../../actions';
 
 import Loader from '../Loader';
 import PageHero from '../sections/PageHero';
-import Modal from '../sections/Modal';
 import Cases from '../cases/Cases';
 
 class HomePage extends Component {
@@ -24,7 +23,6 @@ class HomePage extends Component {
     return (
       <Fragment>
         <PageHero options={options} optionsLoading={optionsLoading} />
-        <Modal />
         { (casesLoading || skillsLoading) ?
           <div className="text-center">
             <Loader /><br />

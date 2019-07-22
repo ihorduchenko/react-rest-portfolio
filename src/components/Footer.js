@@ -7,7 +7,7 @@ import { detectBtnStyle } from '../helpers';
 class Footer extends Component {
   renderSocialLinks = links => {
     return links.map(link => ( 
-      <MDBBtn key={link.name} size="sm" className="m-2" href={link.url} color={detectBtnStyle(link.color)}>{link.name}</MDBBtn>
+      <MDBBtn key={link.name} size="sm" className="m-2" href={link.url} target="_blank" color={detectBtnStyle(link.color)}>{link.name}</MDBBtn>
     ));
   } 
 

@@ -5,6 +5,7 @@ import { getPage } from '../../actions';
 
 import PageHero from '../sections/PageHero';
 import PageContent from '../sections/PageContent';
+import ContactForm from '../sections/ContactForm';
 
 import { MDBContainer, MDBRow, MDBCol } from 'mdbreact';
 
@@ -17,8 +18,6 @@ class ContactPage extends Component {
     const { options, optionsLoading } = this.props.options;
     const { page, pageLoading } = this.props.page;
 
-    console.log(page);
-
     return (
       <Fragment>     
         <PageHero options={options} optionsLoading={optionsLoading} />
@@ -27,13 +26,14 @@ class ContactPage extends Component {
             <MDBContainer>
               <MDBRow center>
                 <MDBCol md="6" lg="6" className="mb-4 text-center">
-                  <PageContent page={page} />                  
-                </MDBCol>  
-              </MDBRow> 
+                  <PageContent page={page} />
+                  <ContactForm />
+                </MDBCol>
+              </MDBRow>
             </MDBContainer>
           </section>
         }
-      </Fragment>  
+      </Fragment>
     );
   }
 }
