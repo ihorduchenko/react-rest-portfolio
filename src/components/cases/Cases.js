@@ -72,6 +72,8 @@ class Cases extends Component {
     const { cases, activeCases } = this.state;
     const casesToShow = ( activeCases.length !== 0 ) ? activeCases : cases;
 
+    console.log(casesToShow);
+
     return (
       <section className="py-5">
         <MDBContainer fluid>

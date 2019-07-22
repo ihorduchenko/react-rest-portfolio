@@ -6,6 +6,7 @@ import Header from './Header';
 import Footer from './Footer';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
+import ContactPage from './pages/ContactPage';
 import Posts from './posts/Posts';
 import Post from './posts/Post';
 
@@ -35,6 +36,9 @@ class App extends Component {
           />
           <Route exact path="/about"
             render={() => <AboutPage options={options} />}
+          />
+          <Route exact path="/contact"
+            render={() => <ContactPage options={options} />}
           />
           <Route exact path={'/blog'} component={Posts} />
           <Route exact path={'/blog/:slug/'} component={Post} />

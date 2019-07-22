@@ -15,7 +15,7 @@ class Footer extends Component {
     const { options, optionsLoading } = this.props.options;
     let footerContent = !optionsLoading && `© ${ options.acf.year_est } - ${new Date().getFullYear()} | ${ options.acf.copyright }`; 
     return (
-      <footer className="py-5">
+      <footer className="py-5 mt-auto">
         <div className="container text-center">
           <h2>{ !optionsLoading && options.acf.footer_title }</h2>
           { !optionsLoading && this.renderSocialLinks(options.acf.social_links) }

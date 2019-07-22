@@ -3,6 +3,13 @@ body {
   font-weight: 400 !important;
 }
 
+#app {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .site-loader {
   position: fixed;
   z-index: 5000;
