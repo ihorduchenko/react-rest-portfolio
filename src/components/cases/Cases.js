@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 
-import { MDBContainer } from 'mdbreact';
+import { MDBContainer, MDBBtn } from 'mdbreact';
 
 import CasesFilter from './CasesFilter';
 import CasesLoop from './CasesLoop';
+import CaseModal from './CaseModal';
 
 class Cases extends Component {
   constructor(props) {
@@ -13,11 +14,19 @@ class Cases extends Component {
       cases: this.props.cases,
       activeCases: [],
       skills: this.props.skills,
-      activeSkills: []
+      activeSkills: [],
+      modalOpen: false
     };
 
     this.setActiveSkills = this.setActiveSkills.bind(this);
+    this.toggleModal = this.toggleModal.bind(this);
   }
+
+  toggleModal = () => {
+    this.setState({
+      modalOpen: !this.state.modalOpen
+    });
+  };
 
   setActiveSkills(e) {
     let id = parseInt(e.target.dataset.id);
@@ -77,6 +86,8 @@ class Cases extends Component {
     return (
       <section className="py-5">
         <MDBContainer fluid>
+          <CaseModal modalOpen={this.state.modalOpen} toggleModal={this.toggleModal} />
+          <MDBBtn onClick={this.toggleModal}>Modal</MDBBtn>
           <CasesFilter
             skills={skills}
             activeSkills={activeSkills}
