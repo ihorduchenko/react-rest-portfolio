@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import { ReactTitle } from 'react-meta-tags';
 
 import { connect } from 'react-redux';
 import { getPage } from '../../actions';
@@ -23,11 +24,17 @@ class AboutPage extends Component {
 
     return (
       <Fragment>     
+        <ReactTitle title="About - Ihor Duchenko React Portfolio"/>
         <PageHero options={options} optionsLoading={optionsLoading} />
         { ( !pageLoading && !optionsLoading ) && 
           <section className="py-5">
             <MDBContainer>
               <MDBRow>
+                <MDBCol md="6" lg="4" className="mb-4 offset-lg-2 order-md-last">
+                  { page.feat_img_url && 
+                    <Figure page={page} options={options} />
+                  }
+                </MDBCol>  
                 <MDBCol md="6" lg="6" className="mb-4">
                   <PageContent page={page} />                  
                   { page.acf.milestones && 
@@ -44,11 +51,6 @@ class AboutPage extends Component {
                     <MDBBtn target="_blank" color="dark" href={page.acf.button.button_url}>{page.acf.button.button_text}</MDBBtn>
                   }
                 </MDBCol>
-                <MDBCol md="6" lg="4" className="mb-4 offset-lg-2">
-                  { page.feat_img_url && 
-                    <Figure page={page} options={options} />
-                  }
-                </MDBCol>  
               </MDBRow> 
             </MDBContainer>
           </section>

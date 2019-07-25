@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import { ReactTitle } from 'react-meta-tags';
 
 import { connect } from 'react-redux';
 import { getPage, getCases, getSkills } from '../../actions';
@@ -22,11 +23,12 @@ class HomePage extends Component {
 
     return (
       <Fragment>
+        <ReactTitle title="Home Page - Ihor Duchenko React Portfolio"/>
         <PageHero options={options} optionsLoading={optionsLoading} />
         { (casesLoading || skillsLoading) ?
           <div className="text-center">
             <Loader /><br />
-            Cases are loading...
+            Page is loading...
           </div> :
           <Cases skills={skills} cases={cases} /> }
       </Fragment>

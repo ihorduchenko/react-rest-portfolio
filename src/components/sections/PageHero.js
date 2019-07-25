@@ -1,12 +1,16 @@
 import React from 'react';
-import { MDBContainer } from "mdbreact"; 
+import { MDBContainer, MDBRow, MDBCol } from "mdbreact"; 
 
 const Hero = ({options, optionsLoading}) => {
   return (
     optionsLoading ? '' : (
       <section className="py-5 text-center">
-        <MDBContainer className="py-5">
-          <h1 className="h1 display-4 font-weight-bold mb-4" dangerouslySetInnerHTML={{ __html: options.acf.site_slogan }} />
+        <MDBContainer>
+          <MDBRow center>
+            <MDBCol md="10" xl="8">
+              <h1 className="display-5 font-weight-bold mb-0" dangerouslySetInnerHTML={{ __html: options.acf.site_slogan }} />
+            </MDBCol>
+          </MDBRow>
         </MDBContainer>
       </section>
     )

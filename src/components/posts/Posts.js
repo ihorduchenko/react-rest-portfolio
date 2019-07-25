@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
+import { ReactTitle } from 'react-meta-tags';
 import { connect } from 'react-redux';
 import { getPosts } from '../../actions';
 
@@ -23,12 +24,15 @@ class Posts extends Component {
       postsContent = <PostsLoop posts={ posts } />;
     }
     return (
-      <section className="py-5">
-        <MDBContainer>
-          <h1 className="h1 display-4 font-weight-bold mb-4">Blog</h1>
-          { postsContent }
-        </MDBContainer>  
-      </section>
+      <Fragment>
+        <ReactTitle title="Blog - Ihor Duchenko React Portfolio"/>
+        <section className="py-5">
+          <MDBContainer>
+            <h1 className="h1 display-4 font-weight-bold mb-4">Blog</h1>
+            { postsContent }
+          </MDBContainer>  
+        </section>
+      </Fragment>
     );
   }
 }

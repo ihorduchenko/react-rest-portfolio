@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import { ReactTitle } from 'react-meta-tags';
 
 import { connect } from 'react-redux';
 import { getPage } from '../../actions';
@@ -19,7 +20,8 @@ class ContactPage extends Component {
     const { page, pageLoading } = this.props.page;
 
     return (
-      <Fragment>     
+      <Fragment>
+        <ReactTitle title="Contact - Ihor Duchenko React Portfolio"/>
         <PageHero options={options} optionsLoading={optionsLoading} />
         { ( !pageLoading && !optionsLoading ) && 
           <section className="py-5">
