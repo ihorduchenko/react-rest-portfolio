@@ -18,6 +18,6 @@ const Figure = ({ page, options }) => (
 Figure.propTypes = {
   page: PropTypes.object,
   options: PropTypes.object
-}
+};
 
 export default Figure;

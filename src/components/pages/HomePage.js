@@ -19,7 +19,6 @@ class HomePage extends Component {
     const { options, optionsLoading } = this.props.options;
     const { skills, skillsLoading } = this.props.skills;
     const { cases, casesLoading } = this.props.cases;
-    console.log()
 
     return (
       <Fragment>
