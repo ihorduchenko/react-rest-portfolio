@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 
 import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavbarToggler, MDBCollapse, MDBContainer } from "mdbreact";
@@ -13,14 +12,22 @@ class Header extends Component {
     this.setState({ isOpen: !this.state.isOpen });
   };
 
-  getPath(url) {
-    return new URL(url).pathname;
+  getPath(item) {
+    return new URL(item.url).pathname;
+  }
+
+  makeLink(item) {
+    if (item.target === '_blank') {
+      return <a href={ item.url } target="_blank" rel="noopener noreferrer" className="nav-link font-weight-normal">{ item.title }</a>
+    }
+    return <NavLink exact className="nav-link font-weight-normal" to={this.getPath(item)}>{ item.title }</NavLink>
   }
 
   renderMenu = menu => {
+    menu.map(item => console.log(item));
     return menu.map(item => (
       <MDBNavItem key={item.ID}>
-        <NavLink exact className="nav-link font-weight-normal" to={this.getPath(item.url)}>{ item.title }</NavLink>
+        {this.makeLink(item)}
       </MDBNavItem>
     ));
   };
@@ -48,11 +55,6 @@ class Header extends Component {
       </MDBNavbar>
     );
   }
-}
-
-Header.propTypes = {
-  menus: PropTypes.object,
-  options: PropTypes.object
 }
 
 export default Header;

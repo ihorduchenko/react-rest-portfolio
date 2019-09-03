@@ -1,6 +1,14 @@
 body {
-  font-family: 'Josefin Sans', sans-serif !important;
+  font-family: 'Comfortaa', cursive !important;
   font-weight: 400 !important;
+}
+
+::-webkit-scrollbar {
+  width: .25rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #9b9b9b;
 }
 
 #app {

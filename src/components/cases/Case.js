@@ -6,17 +6,26 @@ const Case = ({ casse, toggleModal }) => {
   return (
     <>
       <MDBCard className="h-100">
-        <a onClick={() => toggleModal(casse)} href={ `#${casse.slug}` } className="d-block bg-cover media-4-3" style={{ backgroundImage: `url(${ casse.feat_img_url })` }}>
-          <span className="sr-only">{ casse.title.rendered }</span>
+        <a 
+          className="d-block h-100"
+          onClick={() => toggleModal(casse)}
+          href={ `#${casse.slug}` }
+        >
+          <div
+            className="bg-cover media-4-3"
+            style={{ backgroundImage: `url(${ casse.feat_img_url })` }}
+          >
+            <span className="sr-only">{ casse.title.rendered }</span>
+          </div>
+          <MDBCardBody>
+            <MDBCardTitle>{ casse.title.rendered }</MDBCardTitle>
+            <MDBCardText>
+              {terms && terms.map(term => (
+                term.taxonomy === 'skills' && <span className="d-inline-block m-1" key={term.id}>#{term.name}</span>
+              ))}
+            </MDBCardText>
+          </MDBCardBody>
         </a>
-        <MDBCardBody>
-          <MDBCardTitle>{ casse.title.rendered }</MDBCardTitle>
-          <MDBCardText>
-            {terms && terms.map(term => (
-              term.taxonomy === 'skills' && <span className="d-inline-block m-1" key={term.id}>#{term.name}</span>
-            ))}
-          </MDBCardText>
-        </MDBCardBody>
       </MDBCard>
     </>
   );
