@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { getCases, getSkills } from '../../actions';
 
-const CasesContext = React.createContext('');
+const CasesContext = React.createContext();
 
 class CasesProvider extends Component {
   componentDidMount() {
