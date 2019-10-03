@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 const Milestone = ({ digit, caption }) => (
   <div className="d-flex flex-wrap align-items-end">
@@ -7,10 +6,5 @@ const Milestone = ({ digit, caption }) => (
     <small className="font-weight-light h4 mb-0">{ caption }</small>
   </div>
 );
-
-Milestone.propTypes = {
-  digit: PropTypes.string,
-  caption: PropTypes.string
-}
 
 export default Milestone;

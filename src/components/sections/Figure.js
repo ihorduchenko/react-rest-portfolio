@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 const Figure = ({ page, options }) => (
   <figure className="figure">
@@ -14,10 +13,5 @@ const Figure = ({ page, options }) => (
       }
   </figure>
 );
-
-Figure.propTypes = {
-  page: PropTypes.object,
-  options: PropTypes.object
-};
 
 export default Figure;

@@ -4,6 +4,8 @@ import { ReactTitle } from 'react-meta-tags';
 import { connect } from 'react-redux';
 import { getPage, getCases, getSkills } from '../../actions';
 
+import OptionsContextComp from '../contexts/OptionsContextComp';
+
 import Loader from '../Loader';
 import PageHero from '../sections/PageHero';
 import Cases from '../cases/Cases';
