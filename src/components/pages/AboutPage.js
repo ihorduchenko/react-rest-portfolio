@@ -20,8 +20,6 @@ class AboutPage extends Component {
     const { options, optionsLoading } = this.props.options;
     const { page, pageLoading } = this.props.page;
 
-    console.log(page);
-
     return (
       <Fragment>     
         <ReactTitle title="About - Ihor Duchenko React Portfolio"/>
@@ -30,7 +28,7 @@ class AboutPage extends Component {
           <section className="py-5">
             <MDBContainer>
               <MDBRow>
-                <MDBCol md="6" lg="4" className="mb-4 offset-lg-2 order-md-last">
+                <MDBCol md="6" lg="5" className="mb-4 offset-lg-1 order-md-last">
                   { page.feat_img_url && 
                     <Figure page={page} options={options} />
                   }

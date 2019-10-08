@@ -59,4 +59,9 @@ const mapStateToProps = state => ({
   menus: state.menus
 });
 
-export default connect(mapStateToProps, { getWPOptions, getMainMenu })(App);
+const mapdispatchToProps = (dispatch) => ({
+  getWPOptions: () => dispatch(getWPOptions()),
+  getMainMenu: () => dispatch(getMainMenu())
+});
+
+export default connect(mapStateToProps, mapdispatchToProps)(App);

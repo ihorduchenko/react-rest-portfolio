@@ -103,7 +103,7 @@ export const getPage = slug => dispatch => {
     .then(res =>
       dispatch({
         type: GET_PAGE,
-        payload: res.data[0]
+        payload: res.data
       })
     )
     .catch(err =>

@@ -41,8 +41,7 @@ class Cases extends Component {
 
   setActiveSkills(e) {
     let id = parseInt(e.target.dataset.id);
-
-    let { activeSkills } = this.state;
+    let {activeSkills} = this.state;
     let activeSkillsUpd = [...activeSkills];
 
     if ( id !== -1) {
@@ -58,12 +57,9 @@ class Cases extends Component {
     this.setState( {
         activeSkills: activeSkillsUpd
       }, () => {
-        // console.log(this.state.activeSkills);
-        let activeCases = this.filterCases(
-          this.state.cases, this.state.activeSkills
-        );
+        let activeCases = this.filterCases(this.state.cases, this.state.activeSkills);
 
-        this.setState( {
+        this.setState({
           activeCases: activeCases
         }, () => {
             // console.log(this.state.activeCases);
@@ -91,8 +87,6 @@ class Cases extends Component {
     const { skills, activeSkills } = this.state;
     const { cases, activeCases } = this.state;
     const casesToShow = ( activeCases.length !== 0 ) ? activeCases : cases;
-
-    // console.log(casesToShow);
 
     return (
       <section className="py-5">

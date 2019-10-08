@@ -6,8 +6,7 @@ import { DEF_POST_THUMB } from '../../constants';
 
 class SinglePost extends Component {
   render() {
-    const post = this.props.post[0];
-    console.log(post);
+    const {post} = this.props;
 
     let featured_url = post.feat_img_url;
     const thumb = (featured_url ? featured_url : DEF_POST_THUMB);

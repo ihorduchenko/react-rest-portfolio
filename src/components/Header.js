@@ -23,14 +23,13 @@ class Header extends Component {
     return <NavLink exact className="nav-link font-weight-normal" to={this.getPath(item)}>{ item.title }</NavLink>
   }
 
-  renderMenu = menu => {
-    menu.map(item => console.log(item));
-    return menu.map(item => (
+  renderMenu = menu => (
+    menu.map(item => (
       <MDBNavItem key={item.ID}>
         {this.makeLink(item)}
       </MDBNavItem>
-    ));
-  };
+    ))
+  );
 
   render() {
     const { items, menuLoading } = this.props.menus;
@@ -43,7 +42,7 @@ class Header extends Component {
       <MDBNavbar color="indigo" dark expand="md" scrolling fixed="top" tag="header">
         <MDBContainer>
           <MDBNavbarBrand>
-            <NavLink exact className="nav-link white-text py-0" to="/">{ logo }</NavLink>
+            <NavLink exact className="nav-link white-text p-0" to="/">{ logo }</NavLink>
           </MDBNavbarBrand>
           <MDBNavbarToggler onClick={this.toggleCollapse} />
           <MDBCollapse isOpen={this.state.isOpen} navbar>
