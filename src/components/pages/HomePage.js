@@ -27,7 +27,7 @@ class HomePage extends Component {
         { (casesLoading || skillsLoading) ?
           <div className="text-center">
             <Loader /><br />
-            Page is loading...
+            Portfolio is loading...
           </div> :
           <Cases skills={skills} cases={cases} />
         }

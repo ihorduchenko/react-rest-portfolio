@@ -1,7 +1,7 @@
 import React from 'react';
 import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
 
-const Hero = ({options, optionsLoading}) => {
+const PageHero = ({options, optionsLoading}) => {
   return (
     optionsLoading ? '' : (
       <section className="py-5 text-center">
@@ -17,4 +17,4 @@ const Hero = ({options, optionsLoading}) => {
   );
 }
 
-export default Hero;
+export default PageHero;

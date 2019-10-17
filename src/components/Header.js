@@ -47,7 +47,7 @@ class Header extends Component {
           <MDBNavbarToggler onClick={this.toggleCollapse} />
           <MDBCollapse isOpen={this.state.isOpen} navbar>
             <MDBNavbarNav right>
-              { navItems }
+              {navItems}
             </MDBNavbarNav>
           </MDBCollapse>
         </MDBContainer>
