@@ -7,8 +7,8 @@ class Footer extends Component {
     return (
       <footer className="py-5 mt-auto">
         <div className="container text-center">
-          <h2>{ (!optionsLoading && options.acf.footer_section.slogan) && options.acf.footer_section.slogan }</h2>
-          { (!optionsLoading && options.acf.socials_fields) && <SocialIcons socials={options.acf.socials_fields} /> }
+          <h2>{ ((!optionsLoading) && options.acf.footer_section.slogan) && options.acf.footer_section.slogan }</h2>
+          { ((!optionsLoading) && options.acf.socials_fields) && <SocialIcons socials={options.acf.socials_fields} /> }
           <div className="mt-3">
             © {new Date().getFullYear()} - Ihor Duchenko
           </div>

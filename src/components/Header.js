@@ -21,7 +21,7 @@ class Header extends Component {
       <MDBNavbar color="indigo" dark expand="md" scrolling fixed="top" tag="header">
         <MDBContainer>
           <MDBNavbarBrand className="py-0">
-            <NavLink exact className="nav-link white-text p-0" to="/">{ logo }</NavLink>
+            { logo && <NavLink exact className="nav-link white-text p-0" to="/">{ logo }</NavLink> }
           </MDBNavbarBrand>
           <MDBNavbarToggler onClick={this.toggleCollapse} />
           <MDBCollapse isOpen={this.state.isOpen} navbar>

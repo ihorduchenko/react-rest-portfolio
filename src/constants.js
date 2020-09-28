@@ -1,5 +1,5 @@
 // const siteRESTUrl = 'https://wp-rest-api.cloudaccess.host/wp-json/';
-const siteRESTUrl = 'http://ihor-duchenko.zzz.com.ua/wp-json/';
+const siteRESTUrl = '//ihor-duchenko.zzz.com.ua/wp-json/';
 // const siteRESTUrl = 'https://dev.ihorduchenko.cloudaccess.host/wp-json/';
 
 export const API_BASE = siteRESTUrl + 'wp/v2';
