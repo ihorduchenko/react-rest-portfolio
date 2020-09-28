@@ -22,18 +22,14 @@ export const getWPOptions = () => dispatch => {
   dispatch(setOptionsLoading());
   axios
     .get(WP_OPTIONS_API_BASE)
-    .then(res =>
-      dispatch({
-        type: GET_WP_OPTIONS,
-        payload: res.data
-      })
-    )
-    .catch(err =>
-      dispatch({
-        type: GET_WP_OPTIONS,
-        payload: err
-      })
-    )
+    .then(res => {
+        console.log(res)
+        dispatch({
+          type: GET_WP_OPTIONS,
+          payload: res.data
+        })
+      }
+    );
 };
 
 export const getPosts = () => dispatch => {
@@ -44,12 +40,6 @@ export const getPosts = () => dispatch => {
       dispatch({
         type: GET_POSTS,
         payload: res.data
-      })
-    )
-    .catch(err =>
-      dispatch({
-        type: GET_POSTS,
-        payload: err
       })
     );
 };
@@ -63,12 +53,6 @@ export const getPost = slug => dispatch => {
         type: GET_POST,
         payload: res.data
       })
-    )
-    .catch(err =>
-      dispatch({
-        type: GET_POST,
-        payload: err
-      })
     );
 };
 
@@ -81,12 +65,6 @@ export const getPage = slug => dispatch => {
         type: GET_PAGE,
         payload: res.data
       })
-    )
-    .catch(err =>
-      dispatch({
-        type: GET_PAGE,
-        payload: err
-      })
     );
 };
 
@@ -98,12 +76,6 @@ export const getCases = () => dispatch => {
       dispatch({
         type: GET_CASES,
         payload: res.data
-      })
-    )
-    .catch(err =>
-      dispatch({
-        type: GET_CASES,
-        payload: err
       })
     );
 };

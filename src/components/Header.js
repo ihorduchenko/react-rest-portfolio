@@ -25,7 +25,7 @@ class Header extends Component {
 
     return (
       <MDBNavbar color="indigo" dark expand="md" scrolling fixed="top" tag="header">
-        {/* <MDBContainer>
+        <MDBContainer>
           <MDBNavbarBrand className="py-0">
             <NavLink exact className="nav-link white-text p-0" to="/">{ logo }</NavLink>
           </MDBNavbarBrand>
@@ -51,7 +51,7 @@ class Header extends Component {
               </MDBNavItem>
             </MDBNavbarNav>
           </MDBCollapse>
-        </MDBContainer> */}
+        </MDBContainer>
       </MDBNavbar>
     );
   }
