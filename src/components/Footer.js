@@ -13,15 +13,15 @@ class Footer extends Component {
     console.log('footerSocials: ');
     console.log(footerSocials);
     return (
-      // <footer className="py-5 mt-auto">
-      //   <div className="container text-center">
-      //     <h2>{ footerSlogan ? footerSlogan : 'no sloan' }</h2>
-      //     { footerSocials ? <SocialIcons socials={footerSocials} /> : 'no socials' }
-      //     <div className="mt-3">
-      //       © {new Date().getFullYear()} - Ihor Duchenko
-      //     </div>
-      //   </div>
-      // </footer>    
+      <footer className="py-5 mt-auto">
+        {/* <div className="container text-center">
+          <h2>{ footerSlogan ? footerSlogan : 'no sloan' }</h2>
+          { footerSocials ? <SocialIcons socials={footerSocials} /> : 'no socials' }
+          <div className="mt-3">
+            © {new Date().getFullYear()} - Ihor Duchenko
+          </div>
+        </div> */}
+      </footer>    
     );
   }
 }

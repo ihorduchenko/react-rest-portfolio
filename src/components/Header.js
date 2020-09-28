@@ -24,35 +24,35 @@ class Header extends Component {
     console.log(logoSVGcode);
 
     return (
-      // <MDBNavbar color="indigo" dark expand="md" scrolling fixed="top" tag="header">
-      //   <MDBContainer>
-      //     <MDBNavbarBrand className="py-0">
-      //       <NavLink exact className="nav-link white-text p-0" to="/">{ logo }</NavLink>
-      //     </MDBNavbarBrand>
-      //     <MDBNavbarToggler onClick={this.toggleCollapse} />
-      //     <MDBCollapse isOpen={this.state.isOpen} navbar>
-      //       <MDBNavbarNav className="mt-2 mt-md-0 align-items-md-center" right>
-      //         <MDBNavItem>
-      //           <NavLink exact className="nav-link font-weight-normal" to={'/'}>Portfolio</NavLink>
-      //         </MDBNavItem>
-      //         <MDBNavItem>
-      //           <NavLink exact className="nav-link font-weight-normal" to={'/about'}>About</NavLink>
-      //         </MDBNavItem>
-      //         <MDBNavItem>
-      //           <NavLink exact className="nav-link font-weight-normal" to={'/blog'}>Blog</NavLink>
-      //         </MDBNavItem>
-      //         { options.acf.common_links.auth_link && 
-      //           <MDBNavItem className="ml-md-3">
-      //             <ContentButton classNames="btn btn-info btn-sm" link={options.acf.common_links.auth_link} />
-      //           </MDBNavItem>
-      //         }
-      //         <MDBNavItem className="ml-md-3">
-      //           <NavLink exact className="btn btn-primary btn-sm" to={'/contact'}>Contact</NavLink>
-      //         </MDBNavItem>
-      //       </MDBNavbarNav>
-      //     </MDBCollapse>
-      //   </MDBContainer>
-      // </MDBNavbar>
+      <MDBNavbar color="indigo" dark expand="md" scrolling fixed="top" tag="header">
+        {/* <MDBContainer>
+          <MDBNavbarBrand className="py-0">
+            <NavLink exact className="nav-link white-text p-0" to="/">{ logo }</NavLink>
+          </MDBNavbarBrand>
+          <MDBNavbarToggler onClick={this.toggleCollapse} />
+          <MDBCollapse isOpen={this.state.isOpen} navbar>
+            <MDBNavbarNav className="mt-2 mt-md-0 align-items-md-center" right>
+              <MDBNavItem>
+                <NavLink exact className="nav-link font-weight-normal" to={'/'}>Portfolio</NavLink>
+              </MDBNavItem>
+              <MDBNavItem>
+                <NavLink exact className="nav-link font-weight-normal" to={'/about'}>About</NavLink>
+              </MDBNavItem>
+              <MDBNavItem>
+                <NavLink exact className="nav-link font-weight-normal" to={'/blog'}>Blog</NavLink>
+              </MDBNavItem>
+              { options.acf.common_links.auth_link && 
+                <MDBNavItem className="ml-md-3">
+                  <ContentButton classNames="btn btn-info btn-sm" link={options.acf.common_links.auth_link} />
+                </MDBNavItem>
+              }
+              <MDBNavItem className="ml-md-3">
+                <NavLink exact className="btn btn-primary btn-sm" to={'/contact'}>Contact</NavLink>
+              </MDBNavItem>
+            </MDBNavbarNav>
+          </MDBCollapse>
+        </MDBContainer> */}
+      </MDBNavbar>
     );
   }
 }
