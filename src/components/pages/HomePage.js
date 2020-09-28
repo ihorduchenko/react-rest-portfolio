@@ -7,10 +7,11 @@ import { getPage, getCases } from '../../actions';
 import Loader from '../Loader';
 import PageHero from '../sections/PageHero';
 import Cases from '../cases/Cases';
+import { SLUG_HOME } from '../../constants';
 
 class HomePage extends Component {
   componentDidMount() {
-    this.props.getPage('home');
+    this.props.getPage(SLUG_HOME);
     this.props.getCases();
   }
 

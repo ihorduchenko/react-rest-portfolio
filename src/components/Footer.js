@@ -4,14 +4,8 @@ import SocialIcons from './common/SocialIcons';
 class Footer extends Component { 
   render() {
     const { options } = this.props.options;
-    console.log('foote options: ');
-    console.log(options);
     let footerSlogan = options.acf.footer_section.slogan;
     let footerSocials = options.acf.socials_fields;
-    console.log('footerSlogan: ');
-    console.log(footerSlogan);
-    console.log('footerSocials: ');
-    console.log(footerSocials);
     return (
       <footer className="py-5 mt-auto">
         <div className="container text-center">

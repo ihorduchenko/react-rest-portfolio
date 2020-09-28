@@ -8,10 +8,11 @@ import PageContent from '../sections/PageContent';
 import ContactForm from '../sections/ContactForm';
 
 import { MDBContainer, MDBRow, MDBCol } from 'mdbreact';
+import { SLUG_CONTACT } from '../../constants';
 
 class ContactPage extends Component {
   componentDidMount() {
-    this.props.getPage('contact');
+    this.props.getPage(SLUG_CONTACT);
   }
   
   render() {
