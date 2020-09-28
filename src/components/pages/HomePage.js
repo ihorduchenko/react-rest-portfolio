@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { ReactTitle } from 'react-meta-tags';
 
 import { connect } from 'react-redux';
-import { getPage, getCases, getSkills } from '../../actions';
+import { getPage, getCases } from '../../actions';
 
 import Loader from '../Loader';
 import PageHero from '../sections/PageHero';
@@ -12,24 +12,24 @@ class HomePage extends Component {
   componentDidMount() {
     this.props.getPage('home');
     this.props.getCases();
-    this.props.getSkills();
   }
 
   render() {
-    const { options, optionsLoading } = this.props.options;
-    const { skills, skillsLoading } = this.props.skills;
     const { cases, casesLoading } = this.props.cases;
-
+    const { page, pageLoading } = this.props.page;
+    console.log(page);
     return (
       <Fragment>
         <ReactTitle title="Home Page - Ihor Duchenko React Portfolio"/>
-        <PageHero options={options} optionsLoading={optionsLoading} />
-        { (casesLoading || skillsLoading) ?
+        { (!pageLoading && page.acf.hero) && <PageHero title={page.acf.hero.title} content={page.acf.hero.content} /> }
+        { (casesLoading || pageLoading || !page.acf.portfolio) ?
           <div className="text-center">
             <Loader /><br />
             Portfolio is loading...
           </div> :
-          <Cases skills={skills} cases={cases} />
+          <>
+            <Cases title={page.acf.portfolio.title} skills={page.acf.portfolio.skills} cases={cases} />
+          </>
         }
       </Fragment>
     );
@@ -38,14 +38,12 @@ class HomePage extends Component {
 
 const mapStateToProps = state => ({
   page: state.page,
-  cases: state.cases,
-  skills: state.skills
+  cases: state.cases
 });
 
 const mapDispatchToProps = (dispatch) => ({
   getPage: (page) => dispatch(getPage(page)),
-  getCases: () => dispatch(getCases()),
-  getSkills: () => dispatch(getSkills())
+  getCases: () => dispatch(getCases())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

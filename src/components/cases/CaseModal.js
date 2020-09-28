@@ -9,7 +9,7 @@ const CaseModal = ({ actCase, modalOpen, toggleModal }) => {
         <strong>{actCase.title.rendered}</strong>
       </MDBModalHeader>
       <MDBModalBody className="p-0">
-        <img className="mw-100" src={actCase.feat_img_url} alt={actCase.title.rendered}/>
+        <img className="mw-100" src={actCase._embedded['wp:featuredmedia'][0].source_url} alt={actCase.title.rendered}/>
         <div className="text-block p-3" dangerouslySetInnerHTML={{ __html: actCase.content.rendered }}></div>
       </MDBModalBody>
       <MDBModalFooter className="p-2">

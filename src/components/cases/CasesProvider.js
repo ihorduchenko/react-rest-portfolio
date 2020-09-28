@@ -1,13 +1,12 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import { getCases, getSkills } from '../../actions';
+import { getCases } from '../../actions';
 
 const CasesContext = React.createContext();
 
 class CasesProvider extends Component {
   componentDidMount() {
     this.props.getCases();
-    this.props.getSkills();
   }
 
   render() {
@@ -20,13 +19,11 @@ class CasesProvider extends Component {
 }
 
 const mapStateToProps = state => ({
-  cases: state.cases,
-  skills: state.skills
+  cases: state.cases
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  getCases: () => dispatch(getCases()),
-  getSkills: () => dispatch(getSkills())
+  getCases: () => dispatch(getCases())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CasesProvider);

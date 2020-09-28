@@ -89,9 +89,10 @@ class Cases extends Component {
     const casesToShow = ( activeCases.length !== 0 ) ? activeCases : cases;
 
     return (
-      <section className="py-5">
+      <section id="portfolio" className="py-5">
         <MDBContainer fluid>
           <CasesFilter
+            title={this.props.title}
             skills={skills}
             activeSkills={activeSkills}
             onFiltering={this.setActiveSkills}

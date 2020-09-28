@@ -2,6 +2,7 @@ import React from 'react';
 import { MDBCard, MDBCardBody, MDBCardTitle, MDBCardText } from 'mdbreact';
 
 const Case = ({ casse, toggleModal }) => {
+  let featImg = casse._embedded['wp:featuredmedia'][0].source_url;
   let terms = casse._embedded['wp:term'][0];
   return (
     <>
@@ -13,7 +14,7 @@ const Case = ({ casse, toggleModal }) => {
         >
           <div
             className="bg-cover media-4-3"
-            style={{ backgroundImage: `url(${ casse.feat_img_url })` }}
+            style={{ backgroundImage: `url(${ featImg })` }}
           >
             <span className="sr-only">{ casse.title.rendered }</span>
           </div>

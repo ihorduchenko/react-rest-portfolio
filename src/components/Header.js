@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { NavLink } from 'react-router-dom';
 
 import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavbarToggler, MDBCollapse, MDBContainer } from "mdbreact";
+import ContentButton from './common/ContentButton';
 
 class Header extends Component {
   state = {
@@ -12,42 +13,37 @@ class Header extends Component {
     this.setState({ isOpen: !this.state.isOpen });
   };
 
-  getPath(item) {
-    return new URL(item.url).pathname;
-  }
-
-  makeLink(item) {
-    if (item.target === '_blank') {
-      return <a href={ item.url } target="_blank" rel="noopener noreferrer" className="nav-link font-weight-normal">{ item.title }</a>
-    }
-    return <NavLink exact className="nav-link font-weight-normal" to={this.getPath(item)}>{ item.title }</NavLink>
-  }
-
-  renderMenu = menu => (
-    menu.map(item => (
-      <MDBNavItem key={item.ID}>
-        {this.makeLink(item)}
-      </MDBNavItem>
-    ))
-  );
-
   render() {
-    const { items, menuLoading } = this.props.menus;
     const { options, optionsLoading } = this.props.options;
-
-    let navItems = menuLoading ? '' : this.renderMenu(items);
-    let logo = optionsLoading ? 'Ihor Duchenko' : <img width="100" src={ options.acf.logo_big_white } alt={ options.acf.site_slogan } />;
+    let logo = optionsLoading ? 'Ihor Duchenko' : <span className="logo-svg" dangerouslySetInnerHTML={{ __html: options.acf.graphics_fields.logo_svg_code }} />;
+    console.log(options);
 
     return (
       <MDBNavbar color="indigo" dark expand="md" scrolling fixed="top" tag="header">
         <MDBContainer>
-          <MDBNavbarBrand>
+          <MDBNavbarBrand className="py-0">
             <NavLink exact className="nav-link white-text p-0" to="/">{ logo }</NavLink>
           </MDBNavbarBrand>
           <MDBNavbarToggler onClick={this.toggleCollapse} />
           <MDBCollapse isOpen={this.state.isOpen} navbar>
-            <MDBNavbarNav right>
-              {navItems}
+            <MDBNavbarNav className="mt-2 mt-md-0 align-items-md-center" right>
+              <MDBNavItem>
+                <NavLink exact className="nav-link font-weight-normal" to={'/'}>Portfolio</NavLink>
+              </MDBNavItem>
+              <MDBNavItem>
+                <NavLink exact className="nav-link font-weight-normal" to={'/about'}>About</NavLink>
+              </MDBNavItem>
+              <MDBNavItem>
+                <NavLink exact className="nav-link font-weight-normal" to={'/blog'}>Blog</NavLink>
+              </MDBNavItem>
+              { options.acf.common_links.auth_link && 
+                <MDBNavItem className="ml-md-3">
+                  <ContentButton classNames="btn btn-info btn-sm" link={options.acf.common_links.auth_link} />
+                </MDBNavItem>
+              }
+              <MDBNavItem className="ml-md-3">
+                <NavLink exact className="btn btn-primary btn-sm" to={'/contact'}>Contact</NavLink>
+              </MDBNavItem>
             </MDBNavbarNav>
           </MDBCollapse>
         </MDBContainer>

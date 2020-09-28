@@ -7,7 +7,7 @@ import { MDBCard, MDBCardBody, MDBCardTitle, MDBCardText } from 'mdbreact';
 import '../../styles/thumb.css';
 
 const PostCard = ({ post }) => {
-  let featured_url = post.feat_img_url;
+  let featured_url = post._embedded['wp:featuredmedia'][0].source_url;
   const thumb = featured_url ? featured_url : DEF_POST_THUMB;
   const slug = post.slug;
   const title = post.title.rendered;
@@ -18,9 +18,11 @@ const PostCard = ({ post }) => {
       <NavLink to={ "/blog/" + slug } className="d-block bg-cover media-4-3" style={{ backgroundImage: `url(${ thumb })` }}>
         <span className="sr-only">{ title }</span>
       </NavLink>
-      <MDBCardBody>
+      <MDBCardBody className="pb-0">
         <MDBCardTitle>{ title }</MDBCardTitle>
         <MDBCardText tag="div" dangerouslySetInnerHTML={{ __html: excerpt }} />
+      </MDBCardBody>
+      <MDBCardBody className="pt-0 mt-auto">
         <NavLink role="button" className="btn btn-primary" to={ "/blog/" + slug }>Read ⟶</NavLink>
       </MDBCardBody>
     </MDBCard>

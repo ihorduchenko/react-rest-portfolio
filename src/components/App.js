@@ -12,23 +12,21 @@ import Post from './posts/Post';
 import '../styles/styles.css';
 
 import { connect } from 'react-redux';
-import { getWPOptions, getMainMenu } from '../actions';
+import { getWPOptions } from '../actions';
 
 class App extends Component {
   componentDidMount() {
     this.props.getWPOptions();
-    this.props.getMainMenu();
   }
 
   render() {
     const options = this.props.options;
-    const menus = this.props.menus;
 
-    const renderApp = options.optionsLoading && menus.menuLoading ? (
+    const renderApp = options.optionsLoading ? (
       <SiteLoader />
     ) : (
       <Fragment>
-        <Header options={options} menus={menus} />
+        <Header options={options} />
         <main className="main">
           <Route exact path="/"
             render={() => <HomePage options={options} />}
@@ -55,13 +53,11 @@ class App extends Component {
 }
 
 const mapStateToProps = state => ({
-  options: state.options,
-  menus: state.menus
+  options: state.options
 });
 
 const mapdispatchToProps = (dispatch) => ({
-  getWPOptions: () => dispatch(getWPOptions()),
-  getMainMenu: () => dispatch(getMainMenu())
+  getWPOptions: () => dispatch(getWPOptions())
 });
 
 export default connect(mapStateToProps, mapdispatchToProps)(App);
