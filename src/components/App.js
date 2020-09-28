@@ -20,7 +20,8 @@ class App extends Component {
   }
 
   render() {
-    const options = this.props.options;
+    const { options } = this.props;
+    console.log(options);
 
     const renderApp = options.optionsLoading ? (
       <SiteLoader />
@@ -37,8 +38,8 @@ class App extends Component {
           <Route exact path="/contact"
             render={() => <ContactPage options={options} />}
           />
-          <Route exact path={'/blog'} component={Posts} />
-          <Route exact path={'/blog/:slug/'} component={Post} />
+          <Route exact path="/blog" component={Posts} />
+          <Route exact path="/blog/:slug" component={Post} />
         </main>
         <Footer options={options} />
       </Fragment>

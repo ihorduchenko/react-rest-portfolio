@@ -1,6 +1,3 @@
-export const GET_MAIN_MENU = 'GET_MAIN_MENU';
-export const MENU_LOADING = 'MENU_LOADING';
-
 export const GET_WP_OPTIONS = 'GET_WP_OPTIONS';
 export const WP_OPTIONS_LOADING = 'WP_OPTIONS_LOADING';
 
@@ -13,6 +10,3 @@ export const PAGE_LOADING = 'PAGE_LOADING';
 
 export const GET_CASES = 'GET_CASES';
 export const CASES_LOADING = 'CASES_LOADING';
-
-export const GET_SKILLS = 'GET_SKILLS';
-export const SKILLS_LOADING = 'SKILLS_LOADING';

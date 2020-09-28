@@ -14,8 +14,11 @@ class Header extends Component {
   };
 
   render() {
-    const { options, optionsLoading } = this.props.options;
-    let logo = (optionsLoading && !options.acf.graphics_fields.logo_svg_code) ? '' : <span className="logo-svg" dangerouslySetInnerHTML={{ __html: options.acf.graphics_fields.logo_svg_code }} />;
+    const { options } = this.props.options;
+    let logoSVGcode = options.acf.graphics_fields.logo_svg_code;
+    let logo = logoSVGcode ? <span className="logo-svg" dangerouslySetInnerHTML={{ __html: logoSVGcode }} /> : '';
+    console.log('logoSVGcode: ');
+    console.log(logoSVGcode);
 
     return (
       <MDBNavbar color="indigo" dark expand="md" scrolling fixed="top" tag="header">

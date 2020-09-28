@@ -17,7 +17,7 @@ class SinglePost extends Component {
       <Fragment>
         <ReactTitle title={`${post.title.rendered} - Ihor Duchenko React Portfolio`}/>
         <article>
-          <NavLink to={ "/blog/" } className="lead">⟵ Back to posts</NavLink>
+          <NavLink to="/blog/" className="lead">⟵ Back to posts</NavLink>
           <figure className="figure mt-3 mb-4 w-100">
             <img className="figure-img img-fluid z-depth-1" src={ thumb } alt={ title }/>
           </figure>
