@@ -6,6 +6,8 @@ class Footer extends Component {
     const { options } = this.props.options;
     let footerSlogan = options.acf.footer_section.slogan;
     let footerSocials = options.acf.socials_fields;
+    console.log('foote options: ');
+    console.log(options);
     console.log('footerSlogan: ');
     console.log(footerSlogan);
     console.log('footerSocials: ');
