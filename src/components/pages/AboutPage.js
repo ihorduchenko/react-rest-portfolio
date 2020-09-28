@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { getPage } from '../../actions';
 import PageContent from '../sections/PageContent';
 
-import { MDBContainer, MDBRow, MDBCol, MDBBtn } from 'mdbreact';
+import { MDBContainer } from 'mdbreact';
 
 class AboutPage extends Component {
   componentDidMount() {

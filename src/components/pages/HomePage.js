@@ -17,7 +17,6 @@ class HomePage extends Component {
   render() {
     const { cases, casesLoading } = this.props.cases;
     const { page, pageLoading } = this.props.page;
-    console.log(page);
     return (
       <Fragment>
         <ReactTitle title="Home Page - Ihor Duchenko React Portfolio"/>
